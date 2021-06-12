@@ -17,7 +17,7 @@ startGame.addEventListener("click", (e => {
         else if (hardGame.checked){
             popupHard();
         }
-        // stars the timer and tells game to end
+        // starts the timer and tells game to end
         // at 0 seconds remaining.
         let countDown = setInterval(() => {
             if (timer.innerText == 0) {
@@ -37,7 +37,7 @@ startGame.addEventListener("click", (e => {
 }))
 
 
-
+//popUp is Easy mode
 function popUp() {
     let holeNum = Math.floor(Math.random() * 25 + 1); //picks a mole # randomly
     let current = document.getElementById(`hole${holeNum}`); //assigns that random choice to id of mole div
@@ -60,8 +60,45 @@ function popUp() {
     }, 1000 * Math.floor(Math.random() * 2 + 1)); //makes moles popUp every 1 or 2 seconds, randomly
 }
 
-function popDown() {
+//HARD MODE
+function popupHard() {
+    let holeNum = Math.floor(Math.random() * 25 + 1); //picks a mole # randomly
+    let holeNumBad = Math.floor(Math.random() * 25 + 1); //picks a bad mole # randomly
+    if (holeNum === holeNumBad){ //if bad mole is same as good mole, start over
+        popupHard()
+    }
+    else {
+    let current = document.getElementById(`hole${holeNum}`); //assigns that random choice to id of mole div
+    let currentBad = document.getElementById(`hole${holeNumBad}`);
+
+    current.classList.add("mole") //adds mole class to that random choice
+    currentBad.classList.add("badMole") //adds bad mole class to that random choice
+    current.addEventListener("click", (e) => {  //if you click the mole, add to score, and trigger popDown
+        if (e.target.id === current.id && current.classList.contains('mole')) {  //clicking good mole
+            score.innerText++; //gives you points
+            popDown();  //takes away all moles
+
+        }
+        else if (e.target.id === currentBad.id && currentBad.classList.contains(`badMole`)){ //clicking bad mole
+            score.innerText--; //takes away points
+            popDown(); //removes moles
+        }
+    })}
+
+    setTimeout(() => { //sets amount of time moles are around for and watches timer
+
+        popDown(); //if you dont click the mole, this timeout makes it popDown
+        if (timer.innerText != 0) { //if game timer isnt "0", pop up again
+            popupHard();
+        }
+    }, 1000 * Math.floor(Math.random() * 2 + 1)); //makes moles popUp every 1 or 2 seconds, randomly
+}
+
+function popDown() { //popDown removes mole and/or badmole (if hard mode is activated)
     if (document.querySelector(".mole")) { //finds mole
         document.querySelector(".mole").classList.remove("mole"); //removes mole
+    }
+    if (document.querySelector(".badMole")) { //finds bad mole
+        document.querySelector(".badMole").classList.remove("badMole"); //removes bad mole
     }
 }
