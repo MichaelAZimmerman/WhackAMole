@@ -1,0 +1,19 @@
+main{ display: flex;
+flex-flow: row wrap;
+flex-basis: calc(100% / 5 * 4 - 10px);
+margin: 5px;}
+
+aside{ flex-basis: calc(100% / 5 - 10px);
+border: 2px solid black;}
+
+.flex {display: flex;}
+
+.moleHole {height: 100px;
+flex-basis: calc(100% / 5 - 15px);
+margin: 5px;
+border: 2px solid black;}
+
+.mole {background-color: red;}
+
+button {display: block;
+margin: auto;}
