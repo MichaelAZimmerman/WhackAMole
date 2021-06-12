@@ -13,7 +13,9 @@ flex-basis: calc(100% / 5 - 15px);
 margin: 5px;
 border: 2px solid black;}
 
-.mole {background-color: red;}
+.mole {background-color: green;}
+
+.badMole {background-color: red;}
 
 button {display: block;
 margin: auto;

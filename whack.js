@@ -1,7 +1,8 @@
 let score = document.getElementById("score");
 let timer = document.getElementById("timer");
 let startGame = document.getElementById("startGame")
-let hardGame = document.getElementById("hardGame")
+let hardGame = document.getElementById("hard")
+let easyGame = document.getElementById("easy")
 let gameRunning = false
 // allows you to click "start game" button if game isnt
 // currently running. resets score and timer.
@@ -11,7 +12,11 @@ startGame.addEventListener("click", (e => {
         score.innerText = "0";
         gameRunning = true;
         // tells popUp funtion to run
-        popUp();
+        if (easyGame.checked){
+        popUp();}
+        else if (hardGame.checked){
+            popupHard();
+        }
         // stars the timer and tells game to end
         // at 0 seconds remaining.
         let countDown = setInterval(() => {
@@ -26,7 +31,7 @@ startGame.addEventListener("click", (e => {
         }, 1000);
     }
     else {
-        // if game is running, do nothing:
+        // if game is running, button does nothing:
         return;
     }
 }))
