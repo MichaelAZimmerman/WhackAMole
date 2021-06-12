@@ -16,4 +16,5 @@ border: 2px solid black;}
 .mole {background-color: red;}
 
 button {display: block;
-margin: auto;}
+margin: auto;
+background-color: lightgreen;}

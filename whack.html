@@ -39,12 +39,21 @@
             <div class="moleHole" id="hole25"></div>
         </main>
         <aside>
+            <br>
             <button id="startGame">Start Game</button>
+            <br>
+            <form>Choose a difficulty level:<br>
+                <input type="radio" id="easy" name="difficulty" value="easy" checked="checked">
+                <label for="easy">Easy Mode</label><br>
+                <input type="radio" id="hard" name="difficulty" value="hard">
+                <label for="hard">Hard Mode</label><br>
+            </form>
+            <br>
             <div>Time Remaining: <span id="timer">30</span> seconds</div>
             <div>Score: <span id="score">0</span> moles whacked!</div>
         </aside>
-        </div>
-        <script src="whack.js"></script>
+    </div>
+    <script src="whack.js"></script>
 </body>
 
 </html>
