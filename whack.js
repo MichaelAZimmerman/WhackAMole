@@ -4,6 +4,25 @@ let startGame = document.getElementById("startGame")
 let hardGame = document.getElementById("hard")
 let easyGame = document.getElementById("easy")
 let gameRunning = false
+let difficulty = document.getElementById("difficulty")
+
+
+easyGame.addEventListener("click", (e => {
+    if (easyGame.checked) {
+        difficulty.classList.remove("hardMode")
+        difficulty.classList.add("easyMode");
+
+    }
+}))
+
+hardGame.addEventListener("click", (e => {
+    if (hardGame.checked) {
+        difficulty.classList.remove("easyMode")
+        difficulty.classList.add("hardMode");
+
+    }
+}))
+
 // allows you to click "start game" button if game isnt
 // currently running. resets score and timer.
 startGame.addEventListener("click", (e => {

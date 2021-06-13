@@ -30,3 +30,11 @@ border: 2px solid black;}
 
 .text-center {text-align: center;}
 
+.easyMode{
+    background-color: yellowgreen;
+}
+
+.hardMode{
+    background-color: lightcoral;
+}
+
