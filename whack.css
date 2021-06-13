@@ -4,11 +4,17 @@ flex-basis: calc(100% / 5 * 4 - 10px);
 margin: 5px;}
 
 aside{ flex-basis: calc(100% / 5 - 10px);
+margin-top: 10px;
+margin-bottom: 10px;
 border: 2px solid black;}
 
 button {display: block;
     margin: auto;
     background-color: lightgreen;}
+
+form{
+    background-color: yellowgreen;
+}
 
     /* CLASSES */
 .flex {display: flex;}
