@@ -10,7 +10,10 @@ border: 2px dashed black;}
 
 button {display: block;
     margin: auto;
-    background-color: lightgreen;}
+    background-color: lightgreen;
+height: 30px;
+width: 100px;
+border-radius: 5px 5px 5px 5px;}
 
 form{
     background-color: yellowgreen;
@@ -39,4 +42,6 @@ border: 2px solid black;}
 .hardMode{
     background-color: lightcoral;
 }
-
+.bg-blue{background-color: lightskyblue;
+height: 107px;}
+.bg-green{background-color: lightgreen;}
