@@ -82,7 +82,7 @@ function popupHard() {
     currentBad.addEventListener("click", (e) => {  //if you click the mole, add to score, and trigger popDown
         if (e.target.id === currentBad.id && currentBad.classList.contains('badMole')){ //clicking bad mole
             score.innerText--; //takes away points
-            popDown(); //removes moles
+            popDownBad(); //removes moles
         }
     })
 }
@@ -90,6 +90,7 @@ function popupHard() {
     setTimeout(() => { //sets amount of time moles are around for and watches timer
 
         popDown(); //if you dont click the mole, this timeout makes it popDown
+        popDownBad();
         if (timer.innerText != 0) { //if game timer isnt "0", pop up again
             popupHard();
         }
@@ -100,6 +101,8 @@ function popDown() { //popDown removes mole and/or badmole (if hard mode is acti
     if (document.querySelector(".mole")) { //finds mole
         document.querySelector(".mole").classList.remove("mole"); //removes mole
     }
+}
+    function popDownBad(){
     if (document.querySelector(".badMole")) { //finds bad mole
         document.querySelector(".badMole").classList.remove("badMole"); //removes bad mole
     }
