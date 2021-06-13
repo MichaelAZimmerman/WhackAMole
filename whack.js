@@ -72,18 +72,20 @@ function popupHard() {
     let currentBad = document.getElementById(`hole${holeNumBad}`);
 
     current.classList.add("mole") //adds mole class to that random choice
-    currentBad.classList.add("badMole") //adds bad mole class to that random choice
+    currentBad.classList.add("badMole") //adds bad mole class to that other random choice
     current.addEventListener("click", (e) => {  //if you click the mole, add to score, and trigger popDown
         if (e.target.id === current.id && current.classList.contains('mole')) {  //clicking good mole
             score.innerText++; //gives you points
             popDown();  //takes away all moles
-
         }
-        else if (e.target.id === currentBad.id && currentBad.classList.contains(`badMole`)){ //clicking bad mole
+    })
+    currentBad.addEventListener("click", (e) => {  //if you click the mole, add to score, and trigger popDown
+        if (e.target.id === currentBad.id && currentBad.classList.contains('badMole')){ //clicking bad mole
             score.innerText--; //takes away points
             popDown(); //removes moles
         }
-    })}
+    })
+}
 
     setTimeout(() => { //sets amount of time moles are around for and watches timer
 
